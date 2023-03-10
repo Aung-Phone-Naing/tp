@@ -1,1 +1,8 @@
+list
+help
+add n/Hotpot i/Beef, Potatoes, Carrots t/Chinese
+list
+add n/Hotpot2 i/Beefy Pork, Potatoes, Carrots t/Chinese
+delete 2
+list
 exit
