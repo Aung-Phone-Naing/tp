@@ -6,7 +6,9 @@ Responsible for writing out the code base and basic structure of the app.
 
 ## Summary of Contributions
 
-### Features
+### Functional Code Contribution
+* **Backbone Classes Implementation**
+  * **Description**: I implemented the following classes
 * **New Feature**: View recipe by name
   * **Description**: Allows users to view a specific recipe by searching for 
       its name in the following manner, "view \<recipe name\>".
