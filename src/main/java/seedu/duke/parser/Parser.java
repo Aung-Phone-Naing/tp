@@ -36,9 +36,10 @@ public class Parser {
             Pattern.compile("[^a-z0-9, ]", Pattern.CASE_INSENSITIVE);
     private static final Pattern numericCharacters = Pattern.compile("^[0-9 ]*$");
     private static final Pattern nonNumericCharacters = Pattern.compile("[^0-9 ]");
-    private static final String RECIPE_WRONG_NAME_INGREDIENTS_TAG_STEP = "Recipe is missing the \"NAME\" "
-            + "or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs" +
-            "\n or there is more than one \"NAME\" or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs\"!\n";
+    private static final String RECIPE_WRONG_NAME_INGREDIENTS_TAG_STEP = "\nRecipe is missing the \"NAME\" "
+            + "or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs," +
+            "\nor there is more than one\n" +
+            "\"NAME\" or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs\"!\n";
     private static final String RECIPE_WRONG_LEADING_STRING = "Recipe contains the leading string!\n";
     private static final String RECIPE_MISSING_NAME = "Recipe is missing \"NAME\"!\n";
     private static final String RECIPE_MISSING_INGREDIENTS = "Recipe is missing \"INGREDIENTS\"!\n";

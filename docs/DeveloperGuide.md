@@ -1,33 +1,40 @@
 # Developer Guide
 - [Developer Guide](#developer-guide)
   - [Acknowledgements](#acknowledgements)
-  - [Setup \& Prerequisites](#setup--prerequisites)
-  - [Design \& implementation](#design--implementation)
+  - [Setup and Prerequisites](#setup-and-prerequisites)
+  - [Design and implementation](#design-and-implementation)
     - [Architecture](#architecture)
-      - [UI component](#ui-component)
-      - [Parser component](#parser-component)
-      - [Command component](#command-component)
-      - [RecipeList component](#recipelist-component)
-      - [Storage component](#storage-component)
+    - [UI Component](#ui-component)
+    - [Parser Component](#parser-component)
+    - [Command Component](#command-component)
+    - [RecipeList Component](#recipelist-component)
+    - [Storage Component](#storage-component)
     - [Recipe Manage Feature](#recipe-manage-feature)
       - [Implementation](#implementation)
       - [Example Usage](#example-usage)
     - [Recipe Find Feature](#recipe-find-feature)
       - [Implementation](#implementation-1)
       - [Example Usage](#example-usage-1)
-    - [Recipe View Feature](#recipe-view-feature)
+    - [Recipe Steps Edit Feature](#recipe-steps-edit-feature)
       - [Implementation](#implementation-2)
       - [Example Usage](#example-usage-2)
-    - [Help Feature](#help-feature)
+    - [Recipe Ingredients Edit Feature](#recipe-ingredients-edit-feature)
       - [Implementation](#implementation-3)
       - [Example Usage](#example-usage-3)
-  - [Appendix A - Product scope](#appendix-a---product-scope)
-    - [Target user profile](#target-user-profile)
-    - [Value proposition](#value-proposition)
+    - [Recipe View Feature](#recipe-view-feature)
+      - [Implementation](#implementation-4)
+      - [Example Usage](#example-usage-4)
+    - [Help Feature](#help-feature)
+      - [Implementation](#implementation-5)
+      - [Example Usage](#example-usage-5)
+  - [Appendix A - Product Scope](#appendix-a---product-scope)
+    - [Target User Profile](#target-user-profile)
+    - [Value Proposition](#value-proposition)
   - [Appendix B - User Stories](#appendix-b---user-stories)
   - [Appendix C - Non-Functional Requirements](#appendix-c---non-functional-requirements)
   - [Appendix D - Glossary](#appendix-d---glossary)
-  - [Appendix E - Instructions for manual testing](#appendix-e---instructions-for-manual-testing)
+  - [Appendix E - Instructions for Manual Testing](#appendix-e---instructions-for-manual-testing)
+    - [Initialization](#initialization)
     - [Appendix E.1 - Adding a recipe](#appendix-e1---adding-a-recipe)
     - [Appendix E.2 - Deleting a recipe](#appendix-e2---deleting-a-recipe)
 
@@ -36,7 +43,7 @@
 {list here sources of all reused/adapted ideas, code, documentation, and third-party libraries -- include links to the 
 original source as well}
 
-## Setup & Prerequisites
+## Setup and Prerequisites
 1. Ensure you have `Java 11` installed.
 2. Ensure your local repository is synced with the main repository at 
 [AY2223S2-CS2113-F13-1/tp](https://github.com/AY2223S2-CS2113-F13-1/tp).
@@ -46,7 +53,7 @@ original source as well}
 6. Then `cd` into the folder where you copied the jar file. e.g. `cd C:\Users\Lee\Desktop\MyRecipe`.
 7. Type `java -jar tp.main.jar` and press Enter to start the program.
 
-## Design & implementation
+## Design and implementation
 
 ### Architecture
 
@@ -357,36 +364,9 @@ ingredients required and steps to make the dish
 1. Download the `.jar` file and place it in an empty folder.
 2. Open the folder location in a command-line interface. (E.g. Terminal for Windows)
 3. Type in `java -jar .\<JAR_FILE_NAME>.jar` where `JAR_FILE_NAME` is the name of the `.jar` file downloaded.
-4. A successful launch should show a `data` folder being created and a welcome message as such:
+4. A successful launch should show a `data` folder being created and a welcome message as such: 
+> ![Welcome Message](./Pictures/welcomeMessage.png)
     
-    ```
-   Directory for file saving created.
-    
-    __________________________________________________________
-    
-    Saved recipes loaded!
-    
-    HELLO there! I am
-     _____         _         _____  __  ___  ___                _         _______ ________  ____
-    |_   _|       | |       |  _  |/ _| |  \/  |               ( )       / /_   _|  _  |  \/  \ \
-      | | __ _ ___| |_ ___  | | | | |_  | .  . | ___  _ __ ___ |/ ___   | |  | | | | | | .  . || |
-      | |/ _` / __| __/ _ \ | | | |  _| | |\/| |/ _ \| '_ ` _ \  / __|  | |  | | | | | | |\/| || |
-      | | (_| \__ \ ||  __/ \ \_/ / |   | |  | | (_) | | | | | | \__ \  | |  | | \ \_/ / |  | || |
-      \_/\__,_|___/\__\___|  \___/|_|   \_|  |_/\___/|_| |_| |_| |___/  | |  \_/  \___/\_|  |_/| |
-                                                                         \_\                  /_/
-    
-    Your personal recipes assistant!
-    What can I do for you today?
-    
-    You can start by adding recipes to a recipe list that I can generate, simply follow the format below:
-    
-    Add recipe : "add n/<insert recipe name> i/<insert ingredients with ", " separation> t/<insert cuisine> s/<insert number of steps>"
-    
-    If you wish to view the full list of commands, simply type "help"!
-    
-    __________________________________________________________
-    ```
-
 ### Appendix E.1 - Adding a recipe
 Adding a person by using the `add` command and the recipe to be added.
 1. Test case:
@@ -407,9 +387,11 @@ Adding a person by using the `add` command and the recipe to be added.
    
    Expected: No recipe is added. Error details shown in the result display.
    ```
-   Error in description of inputs!
-   Exception occurred: Recipe is missing the "NAME" or "INGREDIENTS" or "TAG" or "SUM of the STEPs
-   or there is more than one "NAME" or "INGREDIENTS" or "TAG" or "SUM of the STEPs"!
+    Error in description of inputs!
+    Exception occurred:
+    Recipe is missing the "NAME" or "INGREDIENTS" or "TAG" or "SUM of the STEPs,
+    or there is more than one
+    "NAME" or "INGREDIENTS" or "TAG" or "SUM of the STEPs"!
    ```
    
 3. Other incorrect add commands to try: 
@@ -433,9 +415,8 @@ Deleting a person by using the `delete` command and the index of the recipe to b
     
     Expected: No recipe is deleted. Error details shown in the result display.
     ```
-    Error in finding index!
-    Exception occurred: Your list is either EMPTY or does not contain recipes up to the index you inputted yet,
-    so you cannot use the DELETE command yet! Try filling up the list first!
+    Please enter a valid index!
+    Valid range: 1 to 1
     ```
 3. Other incorrect delete commands to try: 
    1. `delete`, 

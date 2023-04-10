@@ -140,14 +140,14 @@ addtorecipe --[s/i] id/[index] desc/[description of step/ingredient]
 __________________________________________________________
 
 Error in adding element to recipe!
-Exception occurred: The range you have entered for the index is invalid!
+Exception occurred: The index you have entered is invalid!
 
 Valid Range: 1 to 1
 
 __________________________________________________________
 
 Error in adding element to recipe!
-Exception occurred: The range you have entered for the index is invalid!
+Exception occurred: The index you have entered is invalid!
 
 Valid Range: 1 to 1
 
@@ -378,7 +378,7 @@ RECIPE LIST
 __________________________________________________________
 
 Error in viewing recipe!
-Exception occurred: The range you have entered for the index is invalid!
+Exception occurred: The index you have entered is invalid!
 
 Valid Range: 1 to 6
 

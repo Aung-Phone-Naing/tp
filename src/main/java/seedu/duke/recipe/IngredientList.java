@@ -86,8 +86,6 @@ public class IngredientList {
         return list;
     }
 
-
-
     public boolean isIndexWithinRange(int ingredientIndex) throws Exception{
         if (currIngredientNumber == 0) {
             throw new ListEmptyException();

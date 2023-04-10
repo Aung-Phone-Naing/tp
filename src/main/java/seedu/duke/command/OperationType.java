@@ -1,5 +1,10 @@
 package seedu.duke.command;
 
 public enum OperationType {
-    INGREDIENT, STEP, OTHER
+    /**
+     * Enum for the different types of operations.
+     */
+    INGREDIENT,
+    STEP,
+    OTHER
 }

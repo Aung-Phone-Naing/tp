@@ -37,8 +37,8 @@ public class ViewTest {
             + "recipes up to the index you inputted yet,\n"
             + "so you cannot use the ";
     private static final String SUFFIX_EMPTY_LIMIT_LIST_ERROR = " command yet! Try filling up the list first!";
-    private static final String INVALID_RANGE = "The range you have entered for the index is invalid!\n\n" +
-            "Valid Range: 1 to 3";
+    private static final String INVALID_RANGE = "The index you have entered is invalid!\n\n" +
+            "Valid Range: ";
 
     ByteArrayOutputStream output;
     PrintStream console;
@@ -129,7 +129,7 @@ public class ViewTest {
     @Test
     public void recipeIndexOutOfBound() throws Exception {
         new Command(VIEW, "-10").execute(ui);
-        assertEquals(RECIPE_VIEWING_DEFAULT_ERROR + INVALID_RANGE,
+        assertEquals(RECIPE_VIEWING_DEFAULT_ERROR + INVALID_RANGE + "1 to 3",
                 output.toString().trim());
     }
 

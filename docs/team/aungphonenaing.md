@@ -22,7 +22,7 @@ Responsible for writing out the code base and basic structure of the app.
       they may view it directly instead. However, in the event there are duplicate
       recipe names, there will be a prompt to search for the recipe index using
       the Find feature and use the recipe index to view by index.
-* **New Feature**:
+* **New Feature**: 
 
 ### Contribution to Team-based Task
 

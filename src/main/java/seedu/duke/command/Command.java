@@ -234,8 +234,13 @@ public class Command {
                         ui.showEmptyIngredientList();
                         break;
                     }
-                    ingredientListToDeleteFrom.showList();
                     int maxCount = ingredientListToDeleteFrom.getCurrIngredientNumber();
+                    if (maxCount == 1) {
+                        ui.showMinimumIngredientError();
+                        break;
+                    }
+                    ingredientListToDeleteFrom.showList();
+
                     index = ui.getIndexToDelete(maxCount);
                     if (index == IntLib.ADD_STEP_INDEX_BREAKOUT) {
                         ui.showIngredientQuitMessage();
@@ -246,6 +251,7 @@ public class Command {
                     Storage.writeSavedFile();
                     break;
                 default:
+                    ui.showDefaultCaseError();
                 }
             } catch (Exception e) {
                 ui.showDeletingRecipeElementErrorMessage(e);
@@ -331,6 +337,7 @@ public class Command {
                     throw new IncompleteInputException("The index of " + type + " cannot be empty.\n");
                 }
                 int recipeListNum = Integer.parseInt(fullDescription);
+
                 if (recipeCount == 0) {
                     System.out.println(StringLib.EMPTY_LIST_MESSAGE);
                     break;
@@ -377,6 +384,8 @@ public class Command {
                     Parser.parseEditIngredient(recipeIndex, editDescription);
                 } else if (isEditStep) {
                     Parser.parseEditStep(recipeIndex, editDescription);
+                } else {
+                    ui.showDefaultElseConditionError();
                 }
             } catch (Exception e) {
                 ui.showErrorMessage(e);

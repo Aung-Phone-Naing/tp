@@ -7,9 +7,10 @@ import seedu.duke.exceptions.IncompleteInputException;
 import seedu.duke.exceptions.InvalidInputCharactersException;
 
 public class AddRecipeParserTest {
-    private static final String RECIPE_WRONG_NAME_INGREDIENTS_TAG_STEP = "Recipe is missing the \"NAME\" "
-            + "or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs" +
-            "\n or there is more than one \"NAME\" or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs\"!\n";
+    private static final String RECIPE_WRONG_NAME_INGREDIENTS_TAG_STEP = "\nRecipe is missing the \"NAME\" "
+            + "or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs," +
+            "\nor there is more than one\n" +
+            "\"NAME\" or \"INGREDIENTS\" or \"TAG\" or \"SUM of the STEPs\"!\n";
     private static final String RECIPE_WRONG_LEADING_STRING = "Recipe contains the leading string!\n";
     private static final String RECIPE_MISSING_NAME = "Recipe is missing \"NAME\"!\n";
     private static final String RECIPE_MISSING_INGREDIENTS = "Recipe is missing \"INGREDIENTS\"!\n";
